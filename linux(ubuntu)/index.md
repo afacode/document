@@ -1,4 +1,4 @@
-## Ubuntu16.04 自己的
+## Ubuntu16.04 
 ---
 ### NGINX
 ### NODE
