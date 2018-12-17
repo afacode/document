@@ -143,3 +143,7 @@ module.exports = {
 * uglifyjs-webpack-glugin JS压缩插件
 * extract-text-webpack-plugin CSS分离
 * purifycss-webpack  消除未使用的CSS npm  i -D purifycss-webpack purify-css
+
+
+### 比较好的连接
+[http://webpack.wuhaolin.cn](http://webpack.wuhaolin.cn)

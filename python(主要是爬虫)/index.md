@@ -2,6 +2,7 @@
 [第三方库源](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 
 * xpath
+* pyquery
 * beautifulsoup4
 * requests
 * twisted
