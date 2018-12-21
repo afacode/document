@@ -124,17 +124,18 @@ module.exports = {
 * sass-loader 加载和转译 SASS/SCSS 文件 sass-loader依赖于 npm i -D node-sass
 * postcss-loader  PostCSS是一个CSS的处理平台 前缀的功能 npm install -D postcss-loader postcss-import autoprefixer 
 * stylus-loader   加载和转译 Stylus  
-* url-loader  file loader 一样工作，但如果文件小于限制，可以返回 data URL
+* url-loader  file loader 一样工作，将文件的内容经过base64编码后注入JavaScript或者css中 但如果文件小于限制，可以返回 data URL
 * file-loader 将文件发送到输出文件夹，并返回（相对）URL
 * html-withimg-loader mtl文件中引入标签问题
 ---
 * raw-loader  加载文件原始内容（utf-8）
+* svg-inline-loader 与raw-loader非常相似 同之处在于svg-inline-loader会分析SVG的内容，去除其中不必要的部分代码，以减小SVG的文件大小
 * xml-loader  
 * csv-loader
 ---
 一起的
 * babel-loader 加载 ES2015+ 代码，然后使用 Babel 转译为 ES5
-* babel-preset-env
+* babel-preset-env 
 * babel-preset-es2015
 ---
 插件 
@@ -143,7 +144,60 @@ module.exports = {
 * uglifyjs-webpack-glugin JS压缩插件
 * extract-text-webpack-plugin CSS分离
 * purifycss-webpack  消除未使用的CSS npm  i -D purifycss-webpack purify-css
+* imagemin-webpack-plugin 压缩图片
+* webpack-spritesmith 制作雪碧图
+* 加载图片的方法同样适用于其他二进制类型的资源，例如PDF,SWF等
 
 
 ### 比较好的连接
 [http://webpack.wuhaolin.cn](http://webpack.wuhaolin.cn)
+
+
+
+## 优化
+### 优化开发体验 提升开发效率
+* 优化构建速度
+* 优化使用体验 通过自动化手段完成一些重复的工作，让我们专注于解决问题本身
+
+> 缩小文件的搜索范围
+
+* 优化module Loader配置
+尽可能少地让文件被Loader处理，可以通过include 去命中只有哪些文件需要被处理 通过include缩小命中的范围
+```js
+module: {
+	rules: [
+		{
+			test: /\.js$/,
+			// babel-loader支持缓存转换出的结果，通过cacheDirectory选项开启
+			use: ['babel-loader?cacheDirectory'],
+			include: path.resolve(__dirname, 'src')
+			
+		}
+	]
+}
+```
+* 优化module.noParse配置
+* 优化resolve.modules配置
+* 优化resolve.mainFields配置
+* 优化resolve.alias配置
+* 优化resolve.extensions配置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 优化输出质量
+* 减少用户能感知到的加载时间，也就是首屏加载时间
+* 提升流畅度，也就是提升代码性能
+
+
+

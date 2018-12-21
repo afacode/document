@@ -26,9 +26,15 @@ hash和chunkhash的长度是可指定的，［hash:8]代表取8位Hash值，默�
 
 ## module 配置处理模块的规则
 ### loader
+* style-loader css-loader
+* sass-loader less-loader postcss-loader postcss-cssnext
+* vue-template-compiler 将vue-loader提取出的HTML模板编译成对应的可执行的JavaScript代码
+* vue-loader 解析和转换.vue文件，提取出其中的逻辑代码script、样式代码style及HTML模板template，再分别将它们交给对应的Loader去处理
+* ts-loader
+* awesome-typescript-loader 比较好的ts loader
+
 > 条件配置 test, include, exclude
-` style-loader css-loader sass-loader postcss-loader postcss-cssnext ` <br>
-` awesome-typescript-loader ` 比较好的ts loader <br>
+
 数组里面是或关系
 ```js
 modlue: {
