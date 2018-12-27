@@ -25,3 +25,5 @@ module.exports = {
 * ramda
 * glob
 * lodash
+* chalk  控制台字符样式
+* nodemon 代码监听

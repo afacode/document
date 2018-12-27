@@ -436,9 +436,51 @@ user.update({
 })
 ```
 
+#### ffff
 
+```js
+User.findAll().then((users) => {
+	console.log(users)
+})
+findAll
+findOne
+findById
+findOrCreate
+findAndCountAll
 
+findAll({
+	where: {
+		title: 'afacode'
+	},
+	attributes: ['id', ['name', title]]
+})
 
+findOrCreate({
+	where: {
+		username: 'afacode'
+	},
+	defaults: {
+		job: 'FE'
+	}
+}).spread(user, created) => {
+	
+}
+
+```
+* new Sequelize
+* sequelize.models 返回通过sequelize.define定义的所有模型对象
+* sequelize.define
+* sequelize.Utils
+* sequelize.Promise
+* sequelize.QueryTypes 查询类型枚举
+* sequelize.Validator
+* sequelize.Transaction 事务对象
+
+project.max('age')
+
+project.min('age')
+
+project.sum('age')
 
 
 
