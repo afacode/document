@@ -87,6 +87,22 @@ document.addEventListener('mousewheel', (ev) => {
   }
 });
 ```
+> ipcMain ipcRenderer
+```js
+主进程
+ipcMain.on('listenMsg', (event, msg) => {
+	
+})
+渲染进程
+const msg = 'hello' 
+ipcRenderer.send('listenMsg', msg)
+
+主->渲染
+mainWindow.webContents.send() 主
+ipcRenderer.on() 渲染
+
+```
+
 > electron 的窗口设置最大化 最小化
 ```js
 // 渲染进程
@@ -194,7 +210,7 @@ class WindowUtil{
 			}
 	}
 }
-
+```
 > electron窗口大小控制
 ```js
 主进程
@@ -206,22 +222,96 @@ mounted: function () {
 	ipcRenderer.send('login-window') 
 }
 ```
+> 关闭window
+``` addWindow.close() ```
+
+> 菜单
+```js
+main.js
+const menuTemplate = [
+  {
+    label: 'File',
+    submenu: [
+      {label: 'New File'},
+      {
+		  label: 'Quit',
+		  click() {
+			  app.quit()
+		  }
+	  }
+    ]
+  },
+  {
+    label: 'Help',
+    submenu: [
+      {label: 'Welcome'},
+      {label: 'About'}
+    ]
+  }
+]
+if (process.platform === 'darwin') {
+  menuTemplate.unshift({})
+}
+const mainMenu = Menu.buildFromTemplate(menuTemplate)
+Menu.setApplicationMenu(mainMenu)  
+
+```
+> hotkey 热键 accelerator
+```js
+{
+    label: 'File',
+    submenu: [
+      {label: 'New File'},
+      {
+		  label: 'Quit',
+		  accelerator: 'Command+Q', 
+		  click() {
+			  app.quit()
+		  }
+	  }
+    ]
+},
+accelerator: (() => {
+	if (process.platform === 'darwin') {
+		return 'Command+Q'
+	} else {
+		return 'Ctrl+Q'
+	}
+})
+accelerator: process.platform === 'darwin' ? 'Command+Q' : 'Ctrl+Q'
+
+```
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+# 两种进程都可用的
+* clipboard 复制和粘贴
+* crashReporter 开启发送应用崩溃报告
+* nativeImage
+* screen 检索屏幕的 size，显示，鼠标位置等的信息, 在app模块的ready事件触发之前不可使用这个模块.
+* shell 提供了集成其他桌面客户端的关联功能
+# 渲染进程
+* desktopCapturer 用来获取可用资源
+* ipcRenderer 
+* remote
+* webFrame 允许你自定义如何渲染当前网页(缩放)
+# 主进程
+* app 模块是为了控制整个应用的生命周期设计的
+app.quit() .hide() .show() .exit() .getAppPath() .getVersion() .makeSingleInstance()
+* autoUpdater
+* BrowserWindow
+* dialog 展示原生的系统对话框
+* globalShortcut 便捷的为您设置(注册/注销)各种自定义操作的快捷键
+* ipcMain
+* menu MenuItem
+* powerMonitor 用来监听能源区改变的
+* powerSaveBlocker 用来阻止应用系统进入睡眠模式的，因此这允许应用保持系统和屏幕继续工作.
+* protocol 可以注册一个自定义协议，或者使用一个已经存在的协议
+* session 用来创建一个新的 Session 对象.
+* webContents 一个 事件发出者. 它负责渲染并控制网页
+* Tray 表示一个图标,这个图标处于正在运行的系统的通知区
 
 
 
