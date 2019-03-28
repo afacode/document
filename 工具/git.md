@@ -1,5 +1,9 @@
 ## git
 ```
+git add .
+git commit -m "aaaa"
+git commit -am "aaaa"
+
 查看分支 git branch 
 新建分支 git checkout -b feature-A
 切换分支 git checkout master
@@ -13,7 +17,7 @@ git diff
 回溯历史版本 git reset
 完全恢复至该时间点的状态 git reset --hard fd0cbf0d4a25f747230694d95cac1be72d33441d
 
-修改提交信息 git commit --amend
+修改提交信息 git commit --amend 或 git commit --amend -m
 
 
 
