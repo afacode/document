@@ -1,5 +1,12 @@
 ## git
 ```
+添加远程仓库 git remote add
+git remote add origin git@github.com:afacode/mymd.git
+
+git push -u origin master -u 可以在推送的同时，将origin仓库的master分支设置为本地仓库当前分支的upstream（上游）。添加了这个参数，将来运行git pull命令从远程仓库获取内容时，本地仓库的这个分支就可以直接从origin的master分支获取内容，省去了另外添加参数的麻烦。执行该操作后，当前本地仓库master分支的内容将会被推送到GitHub的远程仓库中。在GitHub上也可以确认远程master分支的内容
+-u 线上与本地分支相同 省去参数
+
+
 git add .
 git commit -m "aaaa"
 git commit -am "aaaa"
@@ -19,7 +26,8 @@ git diff
 
 修改提交信息 git commit --amend 或 git commit --amend -m
 
-
+压缩历史 git rebase -i
+git rebase -i HEAD~2
 
 
 
