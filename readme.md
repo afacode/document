@@ -6,7 +6,7 @@
 [VUE配置不同环境打包](FE/vue/vue.md)
 
 ## node
-
+[linux 安装 node](linux/ubuntu node安装.md)
 ## sql/nosql
 
 ## 服务器
