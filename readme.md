@@ -7,10 +7,13 @@
 
 ## node
 [linux 安装 node](linux/ubuntunode安装.md)
-## sql/nosql
 
-## 服务器
+### 优秀博客
+[30课](http://30ke.cn/doc/)
+[https://www.lisq.xyz/](https://www.lisq.xyz/)
 
-## python
+### 优秀文章
+[常见正则校验](http://30ke.cn/doc/js-regexp)
 
-## go
+### 其他
+[XorPay 个人支付平台](https://xorpay.com/)
