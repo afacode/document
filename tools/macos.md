@@ -1,4 +1,20 @@
 ## macOS 设置
+
+### Homebrew 安装
+` /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" `
+> 安装软件 ` brew install 软件名 `
+```
+安装,更新或卸载
+brew install nodejs
+brew upgrade nodejs
+brew remove nodejs
+brew list                   # 列出当前安装的软件
+brew search nodejs          # 查询与 nodejs 相关的可用软件
+brew info nodejs            # 查询 nodejs 的安装信息
+
+brew services管理各种服务的启停，有点像 linux 里面的 services
+```
+
 ### 给MacOS终端CLI添加颜色 Terminal
 * ` vim ~/.bash_profile `
 
@@ -36,3 +52,8 @@ exit 退出命令行
 清除至当前行尾： ctrl + k
 
 ```
+
+> Mac tree 命令，中文文件名乱码
+* ` tree -N `
+
+* ` tree -L 2 ` 2层级
