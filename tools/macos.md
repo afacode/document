@@ -57,3 +57,17 @@ exit 退出命令行
 * ` tree -N `
 
 * ` tree -L 2 ` 2层级
+
+### mac、linux终端 Idea Terminal 显示git当前所在分支
+```
+vim ~/.bash_profile
+
+# Git branch in prompt.
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+```
+
+### mac terminal git status 中文显示乱码
+* ` git config --global core.quotepath false `
