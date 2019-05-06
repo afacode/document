@@ -1,3 +1,4 @@
+> 自己和其他一些笔记
 ## 前端
 [react native](FE/react-native/index.md)
 
@@ -17,3 +18,9 @@
 
 ### 其他
 [XorPay 个人支付平台](https://xorpay.com/)
+
+[git工具](tools/git.md)
+
+[vscode](tools/vscode.md)
+
+[mac os](tools/vscode.md)
