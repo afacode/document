@@ -23,6 +23,9 @@ process.env: env
 process.env.NODE_ENV': JSON.stringify('production')
 ```
 
+### vue-cli工程升级vue版本
+`npm update vue --save`
+
 
 
 
