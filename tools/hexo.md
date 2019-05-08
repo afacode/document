@@ -35,8 +35,6 @@ tags:
 
 ```
 
-
-
 ## 本地查看
 `hexo g || hexo generate` <br>
 `hexo s || hexo server` <br>
@@ -46,6 +44,17 @@ tags:
 ## 发布
 `hexo clean && hexo g && hexo d`
 
+## 评论插件支持
+> 多说
+
+> 畅言
+
+> 来必力
 
 
+## 增加搜索功能
 
+## 插件
+
+### 字数统计,次数统计
+[显示站点访问量](http://ibruce.info/2015/04/04/busuanzi/)
